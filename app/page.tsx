@@ -5,6 +5,8 @@ import Gallery3D from "@/src/components/common/Gallery3D";
 import HorizontalGallery from "@/src/components/gallery/HorizontalGallery";
 import TargetCursor from "@/src/components/common/TargetCursor";
 import TeamCard from "@/src/components/common/TeamCard";
+import DotGrid from "@/components/DotGrid";
+
 
 
 export default function Home() {
