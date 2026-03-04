@@ -16,7 +16,6 @@ export default function CardStack() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    // Wait for paint, then start timer
     const raf = requestAnimationFrame(() => {
       const timer = setTimeout(() => {
         setOpen(true);

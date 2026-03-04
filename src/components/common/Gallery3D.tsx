@@ -135,7 +135,6 @@ export default function Gallery3D({
 
         const scale = SCALE_FAR + (1 - SCALE_FAR) * et;
 
-        // Opacity: fade in quickly, hold, fade out near exit
         let opacity: number;
         if (c.t < 0.06) opacity = c.t / 0.06;
         else if (c.t > 0.82) opacity = 1 - (c.t - 0.82) / 0.18;

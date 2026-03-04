@@ -3,8 +3,6 @@
 import dynamic from 'next/dynamic';
 import { Skiper19 } from "@/src/components/ui/stroke";
 import TargetCursor from "@/src/components/common/TargetCursor";
-
-// Heavy components loaded only when needed — keeps initial JS bundle small
 const ImageHover = dynamic(() => import('@/src/components/common/ImageHover'), { ssr: false });
 const ScrollGrid = dynamic(() => import('@/src/components/common/ScrollGrid'), { ssr: false });
 const TeamCard = dynamic(() => import('@/src/components/common/TeamCard'), { ssr: false });
