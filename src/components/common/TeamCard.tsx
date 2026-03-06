@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaGithub, FaTwitter } from 'react-icons/fa';
 
 export interface TeamCardProps {
   image: string;
@@ -10,6 +10,7 @@ export interface TeamCardProps {
     linkedin?: string;
     instagram?: string;
     github?: string;
+    twitter?: string;
   };
   className?: string;
 }
@@ -89,6 +90,16 @@ const TeamCard: React.FC<TeamCardProps> = ({
                 className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#57ede0] hover:scale-110 transition-all duration-200"
               >
                 <FaGithub className="text-gray-800 text-xs" />
+              </a>
+            )}
+            {socials.twitter && (
+              <a
+                href={socials.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-7 h-7 flex items-center justify-center rounded-full bg-gray-100 hover:bg-[#57ede0] hover:scale-110 transition-all duration-200"
+              >
+                <FaTwitter className="text-gray-800 text-xs" />
               </a>
             )}
           </div>
