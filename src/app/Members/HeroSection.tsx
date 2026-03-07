@@ -61,10 +61,10 @@ function buildRightClip(): string {
 
 // Newspaper collage images — dark, B&W grid of event photos
 const COLLAGE_PHOTOS = [
-  'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80',
-  'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1200&q=80',
-  'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80',
+  '/images/team/photo1.svg',
+  '/images/team/pic2.svg',
+  '/images/team/pic3.svg',
+  '/images/team/pic4.svg',
   'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&q=80',
   'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80',
 ]
