@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import AnimatedText from './AnimatedText'
+import ECCard from '@/src/components/common/ECCard'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -168,6 +169,7 @@ export default function HeroSection() {
         scale: 0.9,
         duration: 2,
         ease: 'power4.inOut',
+        immediateRender: false,
       })
 
       // Step 2: slide halves apart simultaneously
@@ -226,10 +228,10 @@ export default function HeroSection() {
           <div
             id="hero-ec-content"
             style={{
-              width: '100%', height: '100%',
+              width: '100%', minHeight: '100vh', height: 'auto',
               display: 'flex', flexDirection: 'column',
               alignItems: 'center', justifyContent: 'center',
-              padding: '0 5vw', opacity: 1,
+              padding: '60px 4vw', opacity: 1,
             }}
           >
             {/* Glow */}
@@ -239,9 +241,9 @@ export default function HeroSection() {
               Executive Committee
             </h2>
             {/* Cards */}
-            <div style={{ position:'relative', zIndex:2, display:'flex', flexWrap:'wrap', gap:'18px', width:'100%', maxWidth:'980px', justifyContent:'center' }}>
-              {EC_MEMBERS.map((m) => (
-                <ECCard key={m.name} name={m.name} role={m.role} photo={m.photo} />
+            <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-[980px] justify-center">
+              {EC_MEMBERS.map((m, i) => (
+                <ECCard key={`${m.name}-${i}`} member={m} />
               ))}
             </div>
           </div>
@@ -283,7 +285,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 flex items-center justify-center z-40 pointer-events-none">
               <div
                 ref={contentRef}
-                className="flex flex-col items-center text-center justify-center"
+                className="flex flex-col items-center text-center justify-center absolute inset-0"
               >
                 <h1
                   className="text-white font-black"

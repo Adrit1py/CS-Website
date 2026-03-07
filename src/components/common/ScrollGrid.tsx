@@ -63,7 +63,7 @@ const GridCell = memo(function GridCell({
     const enterEnd = Math.min(enterStart + 0.35, 0.95);
 
     const heroScale = useTransform(scrollProgress, [0, 0.6], [3.2, 1]);
-    const heroBorderRadius = useTransform(scrollProgress, [0, 0.5], [20, 8]);
+    const heroBorderRadius = useTransform(scrollProgress, [0, 0.5], [12, 4]);
 
     const siblingOpacity = useTransform(scrollProgress, [enterStart, enterEnd], [0, 1]);
     const siblingY = useTransform(scrollProgress, [enterStart, enterEnd], [dy * 80 + 40, 0]);
@@ -112,7 +112,7 @@ const GridCell = memo(function GridCell({
                 y: siblingY,
                 x: siblingX,
                 scale: siblingScale,
-                borderRadius: 8,
+                borderRadius: 4,
                 aspectRatio: '1/1',
                 willChange: 'transform, opacity',
                 zIndex: isActive ? 50 : 1,
@@ -196,7 +196,7 @@ export default function ScrollGrid() {
                             key={`zoomed-${activeIndex}`}
                             layoutId={`img-${activeIndex}`}
                             className="absolute z-40 overflow-hidden cursor-pointer"
-                            style={{ borderRadius: 16, width: 'min(80vw, 560px)', aspectRatio: '1/1' }}
+                            style={{ borderRadius: 8, width: 'min(80vw, 560px)', aspectRatio: '1/1' }}
                             initial={false}
                             transition={{ type: 'spring', stiffness: 260, damping: 28 }}
                             onClick={() => setActiveIndex(null)}
@@ -225,9 +225,10 @@ export default function ScrollGrid() {
                             display: 'grid',
                             gridTemplateColumns: 'repeat(5, 1fr)',
                             gridTemplateRows: 'repeat(3, 1fr)',
-                            gap: 'clamp(8px, 1.5vw, 16px)',
+                            gap: 'clamp(4px, 1.2vw, 16px)',
                             width: 'min(96vw, 960px)',
-                            height: 'min(84vh, 680px)',
+                            height: 'max-content',
+                            alignContent: 'center',
                         }}
                     >
                         {Array.from({ length: 15 }).map((_, i) => (
