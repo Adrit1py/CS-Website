@@ -10,7 +10,7 @@ const Gallery3D = dynamic(() => import('@/src/components/common/Gallery3D'), { s
 
 export default function Gallery() {
   return (<>
-  
+
     <SmoothScrollProvider>
       <div className="relative min-h-screen bg-black w-full">
 
@@ -23,13 +23,15 @@ export default function Gallery() {
 
           <HorizontalGallery />
 
-          <ZoomGallery />
+          <div className="hidden md:block">
+            <ZoomGallery />
+          </div>
         </div>
       </div>
     </SmoothScrollProvider>
-    <section style={{ width: '100%', height: '600px' }}>
-        <Gallery3D title="IEEE CS" />
-      </section>
-    </>
+    <section className="relative z-50 block md:hidden overflow-hidden bg-transparent" style={{ width: '100%', height: '100vh', minHeight: '600px' }}>
+      <Gallery3D title="IEEE CS" />
+    </section>
+  </>
   );
 }
